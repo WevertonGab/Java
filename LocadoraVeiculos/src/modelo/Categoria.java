@@ -5,5 +5,5 @@
 package modelo;
 
 public enum Categoria {
-    
+    POPULAR, INTERMEDIARIO, LUXO
 }

@@ -5,5 +5,5 @@
 package modelo;
 
 public enum ModeloAutomovel {
-    
+    GOL, CELTA, PALIO, CIVIC, COROLLA, ONIX, UNO
 }

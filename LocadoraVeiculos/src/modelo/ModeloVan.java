@@ -5,5 +5,5 @@
 package modelo;
 
 public enum ModeloVan {
-    
+    KOMBI, SPRINTER, DUCATO, MASTER, TRANSIT
 }
