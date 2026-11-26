@@ -22,9 +22,7 @@ public class TelaPrincipal extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        JLabel titulo = new JLabel(
-                "Sistema Locadora", SwingConstants.CENTER
-        );
+        JLabel titulo = new JLabel("Sistema Locadora", SwingConstants.CENTER);
 
         titulo.setFont(new Font("Arial", Font.BOLD, 24));
 
@@ -37,9 +35,7 @@ public class TelaPrincipal extends JFrame {
 
         JPanel painel = new JPanel(new GridLayout(7, 1, 10, 10));
 
-        painel.setBorder(
-                BorderFactory.createEmptyBorder(20, 40, 20, 40)
-        );
+        painel.setBorder(BorderFactory.createEmptyBorder(20, 40, 20, 40));
 
         painel.add(titulo);
         painel.add(btnClientes);
@@ -62,7 +58,12 @@ public class TelaPrincipal extends JFrame {
 
         // Telas ainda nao implementadas
 
-        btnVeiculos.setEnabled(false);
+        btnVeiculos.addActionListener(e -> {
+            TelaVeiculos tela = new TelaVeiculos(this, this.locadora);
+            
+            tela.setVisible(true);
+        });
+        
         btnLocacao.setEnabled(false);
         btnDevolucao.setEnabled(false);
         btnVenda.setEnabled(false);
