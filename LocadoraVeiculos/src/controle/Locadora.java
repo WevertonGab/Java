@@ -165,8 +165,11 @@ public class Locadora {
         }
         
         if (!normalizarCpf(cliente.getCpf()).matches("[0-9]{11}")) {
-
          throw new IllegalArgumentException("CPF deve possuir 11 digitos.");
+        }
+        
+        if (!cliente.getRg().trim().matches("[0-9]+")) {
+            throw new IllegalArgumentException("RG deve possuir apenas numeros.");
         }
         
         for (Cliente c : clientes) {
