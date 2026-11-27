@@ -72,7 +72,14 @@ public class TelaPrincipal extends JFrame {
             tela.setVisible(true);
         });
         
-        btnDevolucao.setEnabled(false);
+        //Tela devolucao
+        btnDevolucao.addActionListener(e -> {
+
+            TelaDevolucao tela = new TelaDevolucao(this, this.locadora);
+
+            tela.setVisible(true);
+        });
+        
         btnVenda.setEnabled(false);
 
         // Encerrar sistema
