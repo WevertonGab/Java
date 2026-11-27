@@ -80,7 +80,13 @@ public class TelaPrincipal extends JFrame {
             tela.setVisible(true);
         });
         
-        btnVenda.setEnabled(false);
+        //Teça de venda
+        btnVenda.addActionListener(e -> {
+
+            TelaVenda tela = new TelaVenda(this, this.locadora);
+
+            tela.setVisible(true);
+        });
 
         // Encerrar sistema
 
