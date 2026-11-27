@@ -56,7 +56,7 @@ public class TelaPrincipal extends JFrame {
             tela.setVisible(true);
         });
 
-        // Telas ainda nao implementadas
+        // Tela de veiculos
 
         btnVeiculos.addActionListener(e -> {
             TelaVeiculos tela = new TelaVeiculos(this, this.locadora);
@@ -64,7 +64,14 @@ public class TelaPrincipal extends JFrame {
             tela.setVisible(true);
         });
         
-        btnLocacao.setEnabled(false);
+        
+        //Tela locacao
+        btnLocacao.addActionListener(e -> {
+            TelaLocacao tela = new TelaLocacao(this, this.locadora);
+
+            tela.setVisible(true);
+        });
+        
         btnDevolucao.setEnabled(false);
         btnVenda.setEnabled(false);
 
