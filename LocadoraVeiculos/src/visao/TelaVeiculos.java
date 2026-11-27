@@ -13,6 +13,7 @@ import java.awt.*;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
+import java.util.Calendar;
 
 public class TelaVeiculos extends JDialog {
 
@@ -206,6 +207,13 @@ public class TelaVeiculos extends JDialog {
 
             // Validar valor de compra
 
+            String textoValor = txtValorCompra.getText().trim();
+
+            if (!textoValor.matches("(\\d+|\\d{1,3}(\\.\\d{3})+)(,\\d{1,2})?")) {
+
+                throw new IllegalArgumentException("Informe um valor valido. Ex: 50.000,00.");
+            }
+
             txtValorCompra.commitEdit();
 
             Number numero = (Number) txtValorCompra.getValue();
@@ -233,6 +241,12 @@ public class TelaVeiculos extends JDialog {
             }
 
             int ano = Integer.parseInt(txtAno.getText().trim());
+            
+            int anoAtual = Calendar.getInstance().get(Calendar.YEAR);
+
+            if (ano < 1900 || ano > anoAtual + 1) {
+                throw new IllegalArgumentException("Informe um ano de veiculo valido.");
+            }
 
             // Instanciar veiculo
 

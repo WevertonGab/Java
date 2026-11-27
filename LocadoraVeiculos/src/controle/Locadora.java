@@ -163,7 +163,12 @@ public class Locadora {
         if (cliente == null || campoVazio(cliente.getNome()) || campoVazio(cliente.getSobrenome()) || campoVazio(cliente.getRg()) || campoVazio(cliente.getCpf()) || campoVazio(cliente.getEndereco()) || normalizarCpf(cliente.getCpf()).isEmpty()) {
             throw new IllegalArgumentException("Preencha todos os dados do cliente.");
         }
+        
+        if (!normalizarCpf(cliente.getCpf()).matches("[0-9]{11}")) {
 
+         throw new IllegalArgumentException("CPF deve possuir 11 digitos.");
+        }
+        
         for (Cliente c : clientes) {
 
             if (c != ignorar && normalizarCpf(c.getCpf()) .equals(normalizarCpf(cliente.getCpf()))) {

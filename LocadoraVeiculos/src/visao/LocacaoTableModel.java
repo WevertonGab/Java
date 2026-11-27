@@ -70,7 +70,7 @@ public class LocacaoTableModel extends AbstractTableModel {
 
             case 5:
                 return formatoData.format(
-                    locacao.getDate().getTime()
+                    locacao.getData().getTime()
                 );
 
             case 6:

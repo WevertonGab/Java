@@ -27,7 +27,7 @@ public class Locacao {
         return valor;
     }
     
-    public Calendar getDate() {
+    public Calendar getData() {
         return data;
     }
     
